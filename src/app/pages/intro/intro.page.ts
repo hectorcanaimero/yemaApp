@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
@@ -13,35 +14,24 @@ export class IntroPage implements OnInit {
   slides: { img: string, titulo: string, desc: string }[] = [
     {
       img: '/assets/slides/photos.svg',
-      titulo: 'Comparte Fotos',
+      titulo: 'Juega con Nostros',
       desc: 'Mira y comparte increíbles fotos de todo el mundo'
     },
     {
       img: '/assets/slides/music-player-2.svg',
-      titulo: 'Escucha Música',
+      titulo: 'Estudia la palabra de Dios',
       desc: 'Toda tu música favorita está aquí'
-    },
-    {
-      img: '/assets/slides/calendar.svg',
-      titulo: 'Nunca olvides nada',
-      desc: 'El mejor calendario del mundo a tu disposición'
-    },
-    {
-      img: '/assets/slides/placeholder-1.svg',
-      titulo: 'Tu ubicación',
-      desc: 'Siempre sabremos donde estás!'
     }
   ];
 
-  constructor( private navCtrl: NavController ) { }
+  constructor( private router: Router ) { }
 
   ngOnInit() {
   }
 
   onClick() {
     this.ocultar = 'animated fadeOut fast';
-    this.navCtrl.navigateBack('/');
-
+    this.router.navigate(['main/home']);
   }
 
 }

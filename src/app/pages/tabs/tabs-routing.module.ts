@@ -15,6 +15,10 @@ const routes: Routes = [
         path: 'account',
         loadChildren: () => import('../account/account.module').then( m => m.AccountPageModule)
       },
+      {
+        path: 'biblia',
+        loadChildren: () => import('../biblia/biblia.module').then( m => m.BibliaPageModule)
+      },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ]
   },
