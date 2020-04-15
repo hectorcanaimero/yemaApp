@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { NewComponent } from './new/new.component';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-intro',
@@ -24,14 +24,19 @@ export class IntroPage implements OnInit {
     }
   ];
 
-  constructor( private router: Router ) { }
+  constructor(
+    private modalCtrl: ModalController
+  ) {
+  }
 
   ngOnInit() {
   }
 
-  onClick() {
-    this.ocultar = 'animated fadeOut fast';
-    this.router.navigate(['main/home']);
+  async newUser() {
+    const modal = await this.modalCtrl.create({
+      component: NewComponent
+    });
+    return await modal.present();
   }
 
 }

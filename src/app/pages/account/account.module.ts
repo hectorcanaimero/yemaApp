@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AccountPageRoutingModule } from './account-routing.module';
-
 import { AccountPage } from './account.page';
 
 @NgModule({
