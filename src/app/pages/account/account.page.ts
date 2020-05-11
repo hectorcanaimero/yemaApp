@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Users } from './../../shared/services/games.service';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
+  image: string = '';
+  user: Users[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('yemaApp'));
+    this.image = `./assets/avatars/${ this.user['avatar'] }`;
   }
 
 }

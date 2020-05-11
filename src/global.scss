@@ -24,3 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: "Thorce";
+    src: url('./assets/fonts/Thorce.eot');
+    src: local('./assets/fonts/Thorce');
+    src: url('./assets/fonts/Thorce.svg#thorce') format('svg');
+    src: url('./assets/fonts/Thorce.otf') format('opentype'); 
+}
+
+body{
+    font-family: Thorce !important;
+}

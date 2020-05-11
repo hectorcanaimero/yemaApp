@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'biblia',
         loadChildren: () => import('../biblia/biblia.module').then( m => m.BibliaPageModule)
       },
+      {
+        path: 'play',
+        loadChildren: () => import('../play/play.module').then( m => m.PlayPageModule)
+      },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ]
   },
